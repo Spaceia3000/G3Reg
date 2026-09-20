@@ -44,7 +44,7 @@ namespace clique_solver {
         if (params_.solver_mode == CLIQUE_SOLVER_MODE::PMC_EXACT){
             pmc::input in; // use default input
             in.time_limit = params_.time_limit;
-            in.threads = 12;
+            in.threads = params_.threads;
             in.lb = lower_bound;
             in.ub = in.ub == 0 ? max_core + 1 : in.ub;
 

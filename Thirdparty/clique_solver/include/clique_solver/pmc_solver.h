@@ -59,6 +59,12 @@ namespace clique_solver {
              * Time limit on running the solver.
              */
             double time_limit = 3600;
+
+            /**
+             * Number of worker threads used by the exact PMC solver.
+             * Keep this explicit so scientific runs can be reproducible.
+             */
+            int threads = 1;
         };
 
         MaxCliqueSolver() = default;
