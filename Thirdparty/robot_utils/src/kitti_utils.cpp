@@ -7,6 +7,7 @@
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
 #include "boost/format.hpp"
+#include <boost/filesystem.hpp>
 #include <iostream>
 #include <fstream>
 #include "dataset/kitti_definition.h"
