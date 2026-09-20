@@ -61,3 +61,7 @@ target_link_libraries(demo_reg ${PROJECT_NAME})
 add_executable(demo_seg examples/demo_seg.cpp ${BACKWARD_ENABLE})
 add_backward(demo_seg)
 target_link_libraries(demo_seg ${PROJECT_NAME})
+
+add_executable(ha_mslam_reg_cli examples/ha_mslam_reg_cli.cpp ${BACKWARD_ENABLE})
+add_backward(ha_mslam_reg_cli)
+target_link_libraries(ha_mslam_reg_cli ${PROJECT_NAME})
