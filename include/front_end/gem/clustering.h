@@ -66,14 +66,15 @@ namespace pcl {
                  std::vector<g3reg::ClusterFeature::Ptr> &clusters,
                  bool remove_ground = true) {
 
-        pcl::search::KdTree<PointT> kdtree;
-        kdtree.setInputCloud(cloud);
+        typename pcl::search::KdTree<PointT>::Ptr kdtree(
+                new pcl::search::KdTree<PointT>());
+        kdtree->setInputCloud(cloud);
 
         // 在XY空间上进行聚类
         pcl::EuclideanClusterExtraction<PointT> cluster;
         cluster.setClusterTolerance(1.0);
         cluster.setMinClusterSize(g3reg::config.min_cluster_size);
-        cluster.setSearchMethod(&kdtree);
+        cluster.setSearchMethod(kdtree);
         cluster.setInputCloud(cloud);
         std::vector<pcl::PointIndices> cluster_res;
         cluster.extract(cluster_res);

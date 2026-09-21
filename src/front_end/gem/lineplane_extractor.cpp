@@ -57,6 +57,8 @@ namespace g3reg {
             travel::Cluster(other_cloud, cluster_features, false);
         } else if (config.cluster_mtd == "dcvc") {
             DCVC::Cluster(other_cloud, cluster_features, false);
+        } else if (config.cluster_mtd == "euc") {
+            pcl::Cluster(other_cloud, cluster_features, false);
         }
 
         cluster_time = t.toc();
